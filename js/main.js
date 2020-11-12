@@ -6,22 +6,28 @@ const scene = new THREE.Scene();
 
 //背景モデルを読み込む
 const loader = new THREE.GLTFLoader();
-loader.load( './model/sample.gltf', function ( gltf ) {
+/*loader.load( './model/sample.gltf', function ( gltf ) {
 	scene.add( gltf.scene );
 	//位置
 	gltf.scene.position.set(0, 0, 0);
 }, undefined, function ( error ) {
 	console.error( error );
-} );
+} );*/
+
+//const texture = new THREE.TextureLoader().load( './model/ayame/tex_ayame_of_0.0' );
 
 //人物gltfモデルを読み込む
-loader.load( './model/1.gltf', function ( gltf ) {
+//gltf-2/ayame-2
+//matilda/scene
+loader.load( './model/uni-change.gltf', function ( gltf ) {
 	scene.add( gltf.scene );
 	//位置
 	gltf.scene.position.set(0, 0, 0);
 	//回転 Math.PI=π=180°
 	gltf.scene.rotateY(Math.PI);
 	renderer.outputEncoding = THREE.sRGBEncoding;
+	//texture.encoding = THREE.sRGBEncoding;
+	//texture.flipY = false;
 }, undefined, function ( error ) {
 	console.error( error );
 } );
